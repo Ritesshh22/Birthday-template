@@ -1,9 +1,4 @@
-@media screen and (max-width: 768px) {
-  #wrap {
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
+/* Default desktop styles */
 body {
   margin: 0;
   padding: 0;
@@ -15,37 +10,41 @@ body {
   color: white;
   overflow-x: hidden;
 }
+
 a {
   color: white;
   font-size: 14px;
 }
+
 #main {
   width: 100%;
 }
+
 #wrap {
   position: relative;
-  width: 100%;
-  max-width: 1100px;
-  height: auto;
   margin: 0 auto;
-  padding: 10px;
+  width: 1100px;
+  height: 680px;
+  margin-top: 10px;
 }
+
 #text {
   width: 272px;
   height: 560px;
   left: 188px;
   top: 80px;
-  position: relative;
+  position: absolute;
 }
+
 #code {
   display: none;
   color: rgb(196, 255, 255);
-  font-size: 16px;
   margin-top: 70px;
   line-height: 25px;
   font-size: larger;
   font-weight: bolder;
 }
+
 #clock-box {
   position: absolute;
   left: 60px;
@@ -53,41 +52,121 @@ a {
   font-size: 28px;
   display: none;
 }
+
 #clock-box a {
   font-size: 28px;
   text-decoration: none;
 }
+
 #clock {
   margin-left: 48px;
 }
+
 #clock .digit {
-  font-size: 32px;
+  font-size: 64px;
 }
+
 #canvas {
   margin: 0 auto;
-  width: 100% !important;
-    height: auto !important;
+  width: 1100px;
+  height: 680px;
 }
+
 #error {
   margin: 0 auto;
   text-align: center;
   margin-top: 60px;
   display: none;
 }
+
 .hand {
   cursor: pointer;
 }
+
 .say {
   margin-left: 5px;
 }
+
 .space {
   margin-right: 150px;
 }
 
-#message-box{
+#message-box {
   position: absolute;
-  margin-top:450px;
+  margin-top: 450px;
   font-size: 25px;
   font-family: monospace;
+}
 
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 13px;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+  }
+
+  #wrap {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  #canvas {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  #text {
+    position: relative;
+    width: 90%;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin: 20px auto 0;
+  }
+
+  #code {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  #clock-box {
+    position: relative;
+    left: 0;
+    top: auto;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  #clock {
+    margin-left: 0;
+  }
+
+  #clock .digit {
+    font-size: 32px;
+  }
+
+  #message-box {
+    position: relative;
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .say {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .space {
+    margin-right: 0;
+  }
 }
