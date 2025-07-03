@@ -128,17 +128,17 @@
                 return false;
             }
 
-            var width = canvas.width();
-            var height = canvas.height();
+var width = $(window).width();
+var height = Math.min($(window).height(), 680);
             canvas.attr("width", width);
             canvas.attr("height", height);
 
             var opts = {
                 seed: {
-                    x: width / 2 - 20,
-                    color: "rgb(190, 26, 37)",
-                    scale: 2
-                },
+        x: width / 2 - 20,
+        color: "rgb(190, 26, 37)",
+        scale: width < 768 ? 1 : 2   // 👈 scale tree smaller on phones
+    },
                 branch: [ [535, 680, 570, 250, 500, 200, 30, 100, [
                     [540, 500, 455, 417, 340, 400, 13, 100, [
                         [450, 435, 434, 430, 394, 395, 2, 40]
@@ -156,15 +156,15 @@
                     ]]
                 ]]],
                 bloom: {
-                    num: 700,
-                    width: 1080,
-                    height: 650
-                },
-                footer: {
-                    width: 1200,
-                    height: 5,
-                    speed: 10
-                }
+        num: 700,
+        width: width,
+        height: height - 30
+    },
+    footer: {
+        width: width,
+        height: 5,
+        speed: 10
+    }
             };
 
             var tree = new Tree(canvas[0], width, height, opts);
